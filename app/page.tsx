@@ -1,9 +1,21 @@
 import Image from "next/image";
+import HelloWorld from "./components/hello-world";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div
+      className="
+        grid grid-rows-[20px_1fr_20px]
+        items-center justify-items-center
+        min-h-screen p-8 pb-20 gap-16 sm:p-20
+        font-[family-name:var(--font-geist-sans)]
+      "
+    >
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        {/* → our revamped component */}
+        <HelloWorld name="World" />
+
+        {/* rest of your original content unchanged */}
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -17,12 +29,9 @@ export default function Home() {
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
               app/page.tsx
-            </code>
-            .
+            </code>.
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
+          <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -51,6 +60,7 @@ export default function Home() {
           </a>
         </div>
       </main>
+
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
